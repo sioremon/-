@@ -3,14 +3,11 @@ DIST_DIR := ./dist
 SRC_FILE := $(SRC_DIR)/index.md
 DIST_FILE := $(DIST_DIR)/index.md
 
-all: $(DIST_FILE)
-
-$(DIST_FILE): $(SRC_FILE)
-	mkdir -p $(DIST_DIR)
-	base64 $(SRC_FILE) > $(DIST_FILE)
+all: 
+	base64 $(SRC_FILE) | base64 > $(DIST_FILE)
 
 decode: 
-	base64 -d $(DIST_FILE) 
+	base64 -d $(DIST_FILE) | base64 -d 
 
 clean:
 	rm -rf $(DIST_DIR)
