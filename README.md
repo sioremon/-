@@ -16,3 +16,6 @@ make decode
 make
 ```
 してからコミットする. 
+
+## Cloneしたときの復元方法
+decodeした内容を`src/`ディレクトリに`index.md`として保存する. 
